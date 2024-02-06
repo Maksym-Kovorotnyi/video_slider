@@ -3,11 +3,39 @@
   <head>
     <meta charset="utf-8" />
     <title>Video slider</title>
-    <script type="module" src="./src/index.js"></script>
+
+    <link rel="stylesheet" href="./src/index.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"
+    />
   </head>
   <body>
-    <ul id="gallery">
-      <img src="" alt="" />
+    <ul
+      id="gallery"
+      class="list"
+      data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'
+    >
+      <li class="item"></li>
+      <li class="item"></li>
+      <li class="item"></li>
+      <li class="item"></li>
+      <li class="item"></li>
+      <li class="item"></li>
+      <li class="item"></li>
+      <li class="item"></li>
     </ul>
+    <script type="module" src="./src/index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"
+    ></script>
   </body>
 </html>

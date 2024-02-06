@@ -1,3 +1,7 @@
-import getVideos from "./scripts/API/fetchVideos.js";
+import getVideos from "./API/fetchVideos.js";
+import createMurkup from "./scripts/murkup.js";
+import createSlickSlider from "./scripts/slick.js";
 
-getVideos();
+createMurkup(getVideos);
+
+createSlickSlider();
