@@ -1,19 +1,15 @@
 import getVideos from "./API/fetchVideos.js";
+import deepClone from "./scripts/helpers/deepClone.js";
 import createSlickSlider from "./scripts/slick.js";
-import handleModal from "./scripts/modal.js";
 import createMurkup from "./scripts/helpers/createMurkup.js";
-import { galleryMurkup, modalMurkap } from "./scripts/murkup.js";
+import handleModal from "./scripts/modal.js";
+import { galleryMurkup } from "./scripts/murkup.js";
+import setDataToLocalStorage from "./scripts/helpers/localStorage.js";
 
-const items = document.getElementsByClassName("item");
-const modalContent = document.getElementById("content");
-const iframe = document.getElementById("player");
-if (iframe !== null) {
-  console.log(iframe);
-}
+const list = document.getElementById("gallery");
+const apiData = JSON.parse(localStorage.getItem("videoList"));
 
-createMurkup(getVideos, galleryMurkup, items);
-createMurkup(getVideos, modalMurkap, modalContent);
+setDataToLocalStorage(getVideos, deepClone);
+createMurkup(apiData, galleryMurkup, list);
 createSlickSlider();
 handleModal();
-
-// const player = new Vimeo.Player(iframe);

@@ -5,8 +5,7 @@ export default async function getVideos() {
         authorization: `Bearer f766bc111d281f84c70944a80e16c927`,
       },
     });
-    const data = await response.json();
-    return data;
+    return response.json();
   } catch (error) {
     console.log(error);
   }
