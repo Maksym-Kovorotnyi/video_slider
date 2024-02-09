@@ -5,6 +5,7 @@ import createMurkup from "./scripts/helpers/createMurkup.js";
 import handleModal from "./scripts/modal.js";
 import { galleryMurkup } from "./scripts/murkup.js";
 import setDataToLocalStorage from "./scripts/helpers/localStorage.js";
+import createPagination from "./scripts/pagination.js";
 
 const list = document.getElementById("gallery");
 const apiData = JSON.parse(localStorage.getItem("videoList"));
@@ -12,4 +13,4 @@ const apiData = JSON.parse(localStorage.getItem("videoList"));
 setDataToLocalStorage(getVideos, deepClone);
 createMurkup(apiData, galleryMurkup, list);
 createSlickSlider();
-handleModal();
+handleModal(createPagination);
