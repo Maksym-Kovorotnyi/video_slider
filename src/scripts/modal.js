@@ -4,11 +4,11 @@ const modal = document.getElementById("myModal");
 const iframe = document.getElementById("vimeoPlayer");
 const paginationList = document.getElementById("pagination");
 
-function handleModalClose() {
+function handleModalCloseByBtn() {
   modal.style.display = "none";
   iframe.src = "";
   paginationList.innerHTML = "";
-  closeModalBtn.removeEventListener("click", handleModalClose);
+  closeModalBtn.removeEventListener("click", handleModalCloseByBtn);
   window.removeEventListener("click", handleModalCloseByOverlay);
 }
 function handleModalCloseByOverlay(e) {
@@ -16,7 +16,7 @@ function handleModalCloseByOverlay(e) {
     modal.style.display = "none";
     iframe.src = "";
     paginationList.innerHTML = "";
-    closeModalBtn.removeEventListener("click", handleModalClose);
+    closeModalBtn.removeEventListener("click", handleModalCloseByBtn);
     window.removeEventListener("click", handleModalCloseByOverlay);
   }
 }
@@ -26,9 +26,9 @@ export default function handleModal(paginationFunc) {
     item.addEventListener("click", (e) => {
       paginationFunc(e.currentTarget.id);
       const videoUrl = e.currentTarget.dataset.videoUrl;
-      iframe.src = videoUrl;
+      iframe.src = videoUrl + " &autoplay=1";
       modal.style.display = "block";
-      closeModalBtn.addEventListener("click", handleModalClose);
+      closeModalBtn.addEventListener("click", handleModalCloseByBtn);
       window.addEventListener("click", handleModalCloseByOverlay);
     });
   });

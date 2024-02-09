@@ -62,8 +62,7 @@
 }
 
 .paginationItem {
-    width: 5px;
-    height: 5px;
+    padding: 5px;
     border-radius: 50%;
     background-color: #fff;
     transition: transform 0.8s ease;
@@ -73,7 +72,6 @@
 .paginationItem:focus {
     cursor: pointer;
     background-color: #09529b;
-    transform: translateY(-5px);
 }
 
 .active {
