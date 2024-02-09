@@ -5,13 +5,3 @@ export function galleryMurkup({ pictures, player_embed_url }) {
     </li>
 `;
 }
-
-// export function modalMurkap({ player_embed_url }) {
-//   return `<div
-//         id="player"
-//         class="modal-content"
-//         data-vimeo-url=${player_embed_url}
-//         data-vimeo-width="600"
-//         data-vimeo-autoplay="true"
-//       ></div>`;
-// }
