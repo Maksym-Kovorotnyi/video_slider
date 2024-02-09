@@ -8,6 +8,7 @@ import setDataToLocalStorage from "./scripts/helpers/localStorage.js";
 import createPagination from "./scripts/pagination.js";
 
 const list = document.getElementById("gallery");
+console.log("list:", list);
 const apiData = JSON.parse(localStorage.getItem("videoList"));
 
 setDataToLocalStorage(getVideos, deepClone);

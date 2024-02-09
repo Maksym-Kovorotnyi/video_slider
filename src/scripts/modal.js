@@ -1,9 +1,10 @@
-const openModalBtn = document.getElementsByClassName("item");
+const items = document.getElementsByClassName("item");
 const closeModalBtn = document.getElementById("closeModalBtn");
 const modal = document.getElementById("myModal");
 const iframe = document.getElementById("vimeoPlayer");
 const paginationList = document.getElementById("pagination");
 
+// close modal by press btn
 function handleModalCloseByBtn() {
   modal.style.display = "none";
   iframe.src = "";
@@ -11,6 +12,7 @@ function handleModalCloseByBtn() {
   closeModalBtn.removeEventListener("click", handleModalCloseByBtn);
   window.removeEventListener("click", handleModalCloseByOverlay);
 }
+// close modal by press on overlay
 function handleModalCloseByOverlay(e) {
   if (e.target === modal) {
     modal.style.display = "none";
@@ -22,7 +24,7 @@ function handleModalCloseByOverlay(e) {
 }
 
 export default function handleModal(paginationFunc) {
-  Array.from(openModalBtn).map((item) => {
+  Array.from(items).map((item) => {
     item.addEventListener("click", (e) => {
       paginationFunc(e.currentTarget.id);
       const videoUrl = e.currentTarget.dataset.videoUrl;
